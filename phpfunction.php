@@ -1,4 +1,4 @@
-<?php //declare(strict_types=1);
+<?php declare(strict_types=1);
 
 // PHP FUNCTION
 // NOTE: PHP has more than 1000 built-in functions, and in addition you can create your own custom functions.
@@ -89,7 +89,7 @@ function addNumbers($a, $b){
 
 }
 
-echo addNumbers(5, "5 Days");
+echo addNumbers(5, "5 Days"), "<br>";
 // since strict is NOT enabled "5 days" is changed to int(5), and it will return 10
 // since strict is enabled and "5 days" is not an integer, an error will be thrown
 
@@ -97,7 +97,77 @@ echo addNumbers(5, "5 Days");
 
 //PHP Default Argument Value
 
+/*
 
+The following example shows how to use a default parameter. If we call the function setHeight() without arguments it takes the default value as argument:
+
+Example
+
+*/
+
+function setHeight( $minHeight = 50 ){
+
+    echo "The height is : $minHeight <br>";
+
+}
+
+setheight(350);
+setheight();
+setheight(135);
+setheight(80);
+
+
+//PHP Functions - Returning Values
+
+/*
+
+To let a function return a value, Use the the "return" statement.
+
+Example
+
+*/
+
+function sum( $x, $y ){
+
+    $z = $x + $y;
+
+    return $z;
+
+}
+
+echo "5 + 10 : " . sum( 5, 10) . "<br>";
+echo "7 + 13 : " . sum( 7, 13 ) . "<br>";
+echo "2 + 4 :  " . sum( 2, 4 ) . "<br>";
+
+// PHP Return Type Declaration 
+
+/*
+
+PHP 7 also support Type Declaration for the "return" statement. like with the type declararionfor function
+argument
+
+To declare a type for the function, add a clone ( : ) and the type right before the opening curly ( { )
+bracket when declaring the function.
+
+Example
+
+*/
+
+function addNumber( $a, $b ) : float {
+
+    return $a + $b;
+
+}
+
+echo addNumber( 5.5, 10.3 ) . "<br>";
+
+function addnumberss( $a, $b ) : int {
+
+    return (int) ($a + $b);
+
+}
+
+echo addnumber( 10, 10 );
 
 
 
